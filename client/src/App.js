@@ -1,8 +1,12 @@
 import './App.css';
 import About from './components/aboutus/About';
-import HeroSection from './components/heroSection/HeroSection';
+
+import ContactUs from './components/contactus/ContactUs';
 import NavBar from './components/navBar/NavBar';
+import PopularTrip from './components/populartrip/PopularTrip';
+import HeroSection from './components/heroSection/HeroSection';
 import Whatwedo from './components/whatWeDo/Whatwedo';
+
 
 function App() {
   return (
@@ -10,6 +14,8 @@ function App() {
       <NavBar/>
       <HeroSection/>
       <About/>
+      <PopularTrip/>
+      <ContactUs/>
       <Whatwedo/>
     </div>
   );

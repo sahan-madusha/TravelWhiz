@@ -1,0 +1,28 @@
+.cardCover{
+    width: 380px;
+    height: 450px;
+    padding: 0 22px;
+}
+
+.imageContainer{
+    display: flex;
+    flex-direction: column;
+}
+.mainImage{
+    margin-bottom: 10px;
+}
+
+.subImages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.descrip{
+    text-align: center;
+}
+
+.descrip p{
+    line-height: 18px;
+    width: 350px;
+}
