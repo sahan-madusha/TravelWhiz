@@ -1,0 +1,50 @@
+.contactmain{
+    width: 100%;
+    height: 550px;
+    background-color: burlywood;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: row;
+}
+
+.imageContent img{
+    width: 400px;
+    height: 500px;
+    margin-left: 100px;
+}
+
+.imageContent h2{
+    margin-left: 130px;
+    margin-bottom: 20px;
+}
+
+h2 span{
+    color:green;
+}
+
+.contactDetails{
+    display: flex;
+    flex-direction: column;
+}
+.filling{
+    display: flex;
+    flex-direction: column;
+}
+
+.filling input{
+    border-color: aquamarine;
+    border-width: 3px;
+    border-radius: 18px;
+    width: 550px;
+    padding: 10px;
+    margin-left: 160px;
+}
+
+#input1{
+    height: 40px;
+    margin-top: 80px;
+}
+#input2{
+    height: 70px;
+    margin-top: 30px;
+}
