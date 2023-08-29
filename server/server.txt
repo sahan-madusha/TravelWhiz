@@ -1,0 +1,36 @@
+import React from 'react'
+
+const NavBar = () => {
+    return (
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+
+        <div class="container-fluid row">
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class='col-6'>
+                <a class="navbar-brand fs-4 fw-bold" href="#">TravelWhiz.lk</a>
+            </div>
+
+            <div class="col-6 navbar-nav collapse navbar-collapse d-flex justify-content-evenly" id="navbarNav">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="#"><i class="bi bi-person-fill"></i></a></li>
+            </div>
+        </div>
+    </nav>
+
+    )
+}
+
+export default NavBar
