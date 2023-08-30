@@ -1,0 +1,18 @@
+.bgcolor{
+    background-color:rgb(255, 255, 255);
+    margin-top: 100px;
+    /* margin-left: 350px; */
+}
+
+.textcolor{
+    color: rgba(143, 169, 160, 1);
+}
+
+.borderstyle{
+    border-width: 2px;
+    color: rgba(143, 169, 160, 1);
+}
+
+/* button{
+    margin-left: 270px;
+} */

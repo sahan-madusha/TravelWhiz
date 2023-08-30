@@ -1,27 +1,27 @@
 import './App.css';
-import About from './components/aboutus/About';
-import HeroSection from './components/heroSection/HeroSection';
-import NavBar from './components/navBar/NavBar';
-import PopularTrip from './components/populartrip/PopularTrip';
-import Whatwedo from './components/whatWeDo/Whatwedo';
-import ContactUs from './components/contactus/ContactUs';
-import Footer from './components/footer/Footer';
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import FrontPage from './components/frontPage/FrontPage';
 import Profileform from './components/profilepage/Profileform';
+import { Fragment, useState } from 'react';
 
-function App() {
+function App(props) {
+
+  const [tocreate , setToCreate] = useState(false)
+  const [show , setShow] = useState(true)
+
   return (
-    <div>
-      <NavBar/>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={!tocreate ? <FrontPage show={show} setShow={setShow} tocreate={tocreate} setToCreate={setToCreate} /> : <Navigate to="/profile" />}/>
+          <Route path="/profile" element={tocreate ? <Profileform /> : <Navigate to="/" />} />
+          <Route path='*' element={<Navigate to='/'/>} />
+        </Routes>
+    </BrowserRouter>
 
-      {/* <HeroSection/>
-      <About/>
-      <PopularTrip/>
-      <ContactUs/>
-      <Whatwedo/> */}
-
-      <Profileform/>
-      <Footer/>
-    </div>
+    // <div>
+    //   {!tocreate && <FrontPage show={show} setShow={setShow} tocreate={tocreate}/>}
+    //   {tocreate && <Profileform/>}
+    // </div>
   );
 }
 

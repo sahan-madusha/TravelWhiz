@@ -1,10 +1,13 @@
 import React from 'react'
 import "./Profileform.css"
 import userlogo from "../../assets/facebook 1.png"
+import NavBar from '../navBar/NavBar'
+import Footer from '../footer/Footer'
 
-const Profileform = () => {
+const Profileform = (props) => {
   return (
     <div>
+        <NavBar tocreate={props.tocreate} show={props.show} setShow={props.setShow}/>
         <div className='head'>
             <img src={userlogo} alt=''/>
             <h2>PROFILE</h2>
@@ -54,6 +57,7 @@ const Profileform = () => {
                 <div className='subform'>wfew</div>
             </form>
         </div>
+        <Footer/>
     </div>
   )
 }
