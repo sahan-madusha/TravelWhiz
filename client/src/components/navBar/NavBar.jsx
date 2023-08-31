@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './NavBar.css'
-import { useNavigate } from 'react-router-dom';
 
 const NavBar = (props) => {
-
-    const history = useNavigate();
 
     const switchAuthModeHandler = () => {
         props.setShow((prevState) => !prevState);
     };
-
+    
+    const logoutHandler=()=>{
+        props.setToCreate(true)
+        props.setShow(true)
+    }
 
     return (
 
@@ -29,7 +30,7 @@ const NavBar = (props) => {
                         {props.tocreate ? <h7 onClick={switchAuthModeHandler}>
                             <a class="btn btn-sm border border-1 border-dark px-auto bg-dark text-light rounded-pill text-center nav-link btn-lg-width btn-sm-width " href="#" ><i class="bi bi-person-fill"></i>Profile</a>               
                         </h7> : 
-                        <h7 onClick={() => history('/')}>
+                        <h7 onClick={logoutHandler}>
                             <a class="btn btn-sm border border-1 border-dark px-auto bg-dark text-light rounded-pill text-center nav-link btn-lg-width btn-sm-width " href="#" >Logout</a>               
                         </h7>}
                     </div>

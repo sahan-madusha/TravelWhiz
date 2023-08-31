@@ -12,7 +12,7 @@ const FrontPage = (props) => {
   return (
     <div>
         {!props.show && props.tocreate && <SigninNotification setToCreate={props.setToCreate} setShow={props.setShow}/>}
-        <NavBar tocreate={props.tocreate} show={props.show} setShow={props.setShow}/>
+        <NavBar tocreate={props.tocreate} setToCreate={props.setToCreate} show={props.show} setShow={props.setShow}/>
         <HeroSection/>
         <About/>
         <PopularTrip/>
