@@ -44,7 +44,7 @@ const SigninNotification = (props) => {
             'Content-Type' : 'application/json'
           }        
         }).then((res) => {
-            // setToCreate(false);
+            setToCreate(false);
           if(res.ok){
             return res.json().then((data)=>{
                 switchloginhandler();

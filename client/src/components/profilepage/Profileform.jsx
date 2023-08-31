@@ -7,7 +7,7 @@ import Footer from '../footer/Footer'
 const Profileform = (props) => {
   return (
     <div>
-        <NavBar tocreate={props.tocreate} show={props.show} setShow={props.setShow}/>
+        <NavBar tocreate={props.tocreate} setToCreate={props.setToCreate} show={props.show} setShow={props.setShow}/>
         <div className='head'>
             <img src={userlogo} alt=''/>
             <h2>PROFILE</h2>
