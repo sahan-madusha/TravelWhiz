@@ -1,23 +1,23 @@
 import './App.css';
-import About from './components/aboutus/About';
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import FrontPage from './components/frontPage/FrontPage';
+import Profileform from './components/profilepage/Profileform';
+import { Fragment, useState } from 'react';
 
-import ContactUs from './components/contactus/ContactUs';
-import NavBar from './components/navBar/NavBar';
-import PopularTrip from './components/populartrip/PopularTrip';
-import HeroSection from './components/heroSection/HeroSection';
-import Whatwedo from './components/whatWeDo/Whatwedo';
+function App(props) {
 
+  const [tocreate , setToCreate] = useState(true)
+  const [show , setShow] = useState(true)
 
-function App() {
   return (
-    <div>
-      <NavBar/>
-      <HeroSection/>
-      <About/>
-      <PopularTrip/>
-      <ContactUs/>
-      <Whatwedo/>
-    </div>
+    <BrowserRouter>
+        <Routes>
+          <Route path="/" element={tocreate ? <FrontPage show={show} setShow={setShow} tocreate={tocreate} setToCreate={setToCreate} /> : <Navigate to="/profile" />}/>
+          <Route path="/profile" element={!tocreate ? <Profileform /> : <Navigate to="/" />} />
+          <Route path='*' element={<Navigate to='/'/>} />
+        </Routes>
+    </BrowserRouter>
+
   );
 }
 

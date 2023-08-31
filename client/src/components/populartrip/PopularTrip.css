@@ -2,6 +2,9 @@
     width: 100%;
     height: 90vh;
     padding: 60px 35px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 500px;
 }
 
 h1 span{
