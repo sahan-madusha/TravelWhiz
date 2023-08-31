@@ -6,22 +6,18 @@ import { Fragment, useState } from 'react';
 
 function App(props) {
 
-  const [tocreate , setToCreate] = useState(false)
+  const [tocreate , setToCreate] = useState(true)
   const [show , setShow] = useState(true)
 
   return (
     <BrowserRouter>
         <Routes>
-          <Route path="/" element={!tocreate ? <FrontPage show={show} setShow={setShow} tocreate={tocreate} setToCreate={setToCreate} /> : <Navigate to="/profile" />}/>
-          <Route path="/profile" element={tocreate ? <Profileform /> : <Navigate to="/" />} />
+          <Route path="/" element={tocreate ? <FrontPage show={show} setShow={setShow} tocreate={tocreate} setToCreate={setToCreate} /> : <Navigate to="/profile" />}/>
+          <Route path="/profile" element={!tocreate ? <Profileform /> : <Navigate to="/" />} />
           <Route path='*' element={<Navigate to='/'/>} />
         </Routes>
     </BrowserRouter>
 
-    // <div>
-    //   {!tocreate && <FrontPage show={show} setShow={setShow} tocreate={tocreate}/>}
-    //   {tocreate && <Profileform/>}
-    // </div>
   );
 }
 

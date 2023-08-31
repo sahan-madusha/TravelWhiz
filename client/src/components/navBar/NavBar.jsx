@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import './NavBar.css'
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = (props) => {
+
+    const history = useNavigate();
+
     const switchAuthModeHandler = () => {
         props.setShow((prevState) => !prevState);
     };
 
-    console.log(props.tocreate)
 
     return (
 
@@ -23,9 +26,12 @@ const NavBar = (props) => {
                         <a class="nav-link text-dark fw-bold navbar-link me-4" href="#">Home</a>
                         <a class="nav-link text-dark fw-bold navbar-link me-4" href="#">About us</a>
                         <a class="nav-link text-dark fw-bold navbar-link me-4" href="#">Contact us</a>
-                        <h7 onClick={switchAuthModeHandler}>
-                            <a class="btn btn-sm border border-1 border-dark px-auto bg-dark text-light rounded-pill text-center nav-link btn-lg-width btn-sm-width " href="#" ><i class="bi bi-person-fill"></i>{!props.tocreate ? 'Profile' : 'Logout'}</a>               
-                        </h7>
+                        {props.tocreate ? <h7 onClick={switchAuthModeHandler}>
+                            <a class="btn btn-sm border border-1 border-dark px-auto bg-dark text-light rounded-pill text-center nav-link btn-lg-width btn-sm-width " href="#" ><i class="bi bi-person-fill"></i>Profile</a>               
+                        </h7> : 
+                        <h7 onClick={() => history('/')}>
+                            <a class="btn btn-sm border border-1 border-dark px-auto bg-dark text-light rounded-pill text-center nav-link btn-lg-width btn-sm-width " href="#" >Logout</a>               
+                        </h7>}
                     </div>
                 </div>
             </div>

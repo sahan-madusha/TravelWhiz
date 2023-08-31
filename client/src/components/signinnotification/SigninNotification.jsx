@@ -26,7 +26,7 @@ const SigninNotification = (props) => {
         const enteredPassword = passwordInputRef.current.value;
     
         let url;
-        if(tocreate){
+        if(!tocreate){
           url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC3Fl7A__tVkNGYJzRwfhYeVcYhTVR5lE4'
         }else{
           url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC3Fl7A__tVkNGYJzRwfhYeVcYhTVR5lE4'
@@ -44,7 +44,7 @@ const SigninNotification = (props) => {
             'Content-Type' : 'application/json'
           }        
         }).then((res) => {
-            setToCreate(false);
+            // setToCreate(false);
           if(res.ok){
             return res.json().then((data)=>{
                 switchloginhandler();
